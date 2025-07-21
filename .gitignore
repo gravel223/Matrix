@@ -1,0 +1,83 @@
+# Компилятор-сгенерированные файлы
+*.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.manifest
+*.exp
+*.sdf
+*.opensdf
+*.suo
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.bak
+*.vcxproj.DotSettings
+
+# Временные файлы Visual Studio
+Debug/
+Release/
+x64/
+Win32/
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.DotSettings
+
+# Файлы IDE
+.vscode/
+.idea/
+.vs/
+
+# Файлы отладки
+*.log
+*.stackdump
+
+# Файлы автосохранения
+*~
+.#*
+
+# Файлы документации
+docs/_build/
+
+# Файлы настроек
+settings.json
+
+# Файлы сборки
+build/
+out/
+bin/
+dist/
+
+# Файлы окружения
+.env
+
+# Файлы кэша
+*.cache
+
+# Файлы специфичные для Visual Studio
+*.vcxproj.filters
+*.vcxproj.user
+*.vcxproj.DotSettings
+*.sln
+*.suo
+*.user
+*.opendb
+*.opensdf
+*.sdf
+
+# Файлы специфичные для macOS
+.DS_Store
+
+# Файлы специфичные для Linux
+*.swp
+*.swo
+*.so
