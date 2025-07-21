@@ -10,5 +10,7 @@ public:
 	Matrix();                // конструктор по умолчанию
 	Matrix(int rows, int cols);// конструктор с параметрами
 	~Matrix();              // деструктор
+	Matrix(const Matrix& other); // конструктор копирования
+	Matrix& operator=(const Matrix& other); 
 };
 

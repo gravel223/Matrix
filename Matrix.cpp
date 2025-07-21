@@ -36,5 +36,61 @@ Matrix::Matrix(int rows, int cols) {
 
     }
 
+    //реализация конструктора копирования
+    Matrix::Matrix(const Matrix& other) {
+        // Сначала проверяем, что исходный объект валиден
+        if (other.matrix == nullptr) {
+            // В этом случае создаем пустую матрицу
+            rows = 0;
+            cols = 0;
+            matrix = nullptr;
+            return; // завершаем выполнение конструктора
+        }
+
+        rows = other.rows;
+        cols = other.cols;
+
+        matrix = new int* [rows];
+        for (int i = 0; i < rows; i++) {
+            matrix[i] = new int[cols];
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = other.matrix[i][j];
+            }
+        }
+    }
+    // реализация оператора присваивания
+    Matrix& Matrix::operator=(const Matrix& other)
+    {
+        if (this == &other) {
+            return *this;
+        }
+        if (matrix != nullptr) {
+            for (int i = 0; i < rows; i++) {
+                delete[] matrix[i];
+            }
+            delete[] matrix;
+            matrix = nullptr;
+        }
+        rows = other.rows;
+        cols = other.cols;
+
+        matrix = new int* [rows];
+        for (int i = 0; i < rows; i++) {
+            matrix[i] = new int[cols];
+        }
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = other.matrix[i][j];
+            }
+        }
+        return *this;
+    }
+    
+    
+
 
     
