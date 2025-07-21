@@ -1,5 +1,6 @@
 #include "Matrix.h"
 #include <iostream>
+#include<string>
 
 // реализаци€ конструктора по умолчанию
 Matrix::Matrix() {
@@ -144,6 +145,21 @@ Matrix::Matrix(int rows, int cols) {
             return 0;
         }
         return cols;
+    }
+
+    std::string Matrix::toString() const {
+        if (matrix == nullptr) {
+            return "ћатрица не инициализирована";
+        }
+
+        std::string st = "";
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                st += std::to_string(matrix[i][j]) + " ";
+            }
+            st += "\n";
+        }
+        return st;
     }
 
     
