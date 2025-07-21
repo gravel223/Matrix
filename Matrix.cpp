@@ -110,6 +110,13 @@ Matrix::Matrix(int rows, int cols) {
         }
         std::cout << std::endl;
     }
+    void Matrix::setElement(int row, int col, int value) {
+        if (matrix == nullptr || row < 0 || row >= rows || cols < 0 || col >= cols) {
+            std::cout << "Ошибка: некорректные значения!" << std::endl;
+            return;
+        }
+        matrix[row][col] = value;
+    }
     
     
 
