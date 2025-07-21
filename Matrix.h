@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include "Matrix.h"
+#include <string.h>
 class Matrix
 {
 private:
