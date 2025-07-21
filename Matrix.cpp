@@ -117,6 +117,18 @@ Matrix::Matrix(int rows, int cols) {
         }
         matrix[row][col] = value;
     }
+
+    int Matrix::getElement(int row, int col) {
+        if (matrix == nullptr) {
+            std::cout << "Ошибка: матрица пуста!" << std::endl;
+            return 0;
+        }
+        if (row < 0 || row >= rows || cols < 0 || col >= cols) {
+            std::cout << "Ошибка: некорректные значения!" << std::endl;
+            return 0;
+        }
+        return matrix[row][col];
+    }
     
     
 

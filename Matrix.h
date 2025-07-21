@@ -15,5 +15,6 @@ public:
 	void fill(int value); // заполнение
 	void print(); // вывод
 	void setElement(int row, int col, int value); // получение элемента
+	int getElement(int row, int col); // Получение элемента по индексу
 };
 
