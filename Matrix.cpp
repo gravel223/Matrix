@@ -89,6 +89,27 @@ Matrix::Matrix(int rows, int cols) {
         }
         return *this;
     }
+
+    void Matrix::fill(int value) {
+        if (matrix == nullptr) {
+            std::cout << "Матрица пуста!" << std::endl;
+            return;
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = value;
+            }
+        }
+    }
+
+    void Matrix::print() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                std::cout << matrix[i][j] << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
     
     
 
