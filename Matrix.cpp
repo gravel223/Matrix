@@ -129,6 +129,23 @@ Matrix::Matrix(int rows, int cols) {
         }
         return matrix[row][col];
     }
+
+    int Matrix::getRows() const {
+        if (matrix == nullptr) {
+            std::cout << "Ошибка: матрица не инициализирована!" << std::endl;
+            return 0;
+        }
+        return rows;
+    }
+
+    int Matrix::getCols() const {
+        if (matrix == nullptr) {
+            std::cout << "Ошибка: матрица не инициализирована!" << std::endl;
+            return 0;
+        }
+        return cols;
+    }
+
     
     
 

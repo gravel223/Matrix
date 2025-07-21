@@ -16,5 +16,7 @@ public:
 	void print(); // вывод
 	void setElement(int row, int col, int value); // получение элемента
 	int getElement(int row, int col); // Получение элемента по индексу
+	int getRows() const; // колличество строк
+	int getCols() const// колличество стобцов
 };
 
