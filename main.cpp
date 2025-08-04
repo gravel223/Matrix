@@ -1,5 +1,4 @@
-﻿#pragma execution_character_set("utf-8")
-#include <iostream>
+﻿#include <iostream>
 #include"Matrix.h"
 #include <string.h>
 

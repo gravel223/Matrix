@@ -1,5 +1,4 @@
-#pragma execution_character_set("utf-8")
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include "Matrix.h"
 #include <string.h>
@@ -10,19 +9,19 @@ private:
 	int cols;
 	int** matrix;
 public:
-	// конструкторы
-	Matrix();                // конструктор по умолчанию
-	Matrix(int rows, int cols);// конструктор с параметрами
-	~Matrix();              // деструктор
-	Matrix(const Matrix& other); // конструктор копирования
-	Matrix& operator=(const Matrix& other); // оператор присваивания
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+	Matrix();                // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	Matrix(int rows, int cols);// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	~Matrix();              // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+	Matrix(const Matrix& other); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Matrix& operator=(const Matrix& other); // РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
 	bool operator==(const Matrix& other) const; 
-	void fill(int value); // заполнение
-	void print(); // вывод
-	void setElement(int row, int col, int value); // получение элемента
-	int getElement(int row, int col); // Получение элемента по индексу
-	int getRows() const; // колличество строк
-	int getCols() const;// колличество стобцов
-	std::string toString() const; // Вывод матрицы в строку
+	void fill(int value); // Р·Р°РїРѕР»РЅРµРЅРёРµ
+	void print(); // РІС‹РІРѕРґ
+	void setElement(int row, int col, int value); // РїРѕР»СѓС‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
+	int getElement(int row, int col); // РџРѕР»СѓС‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РїРѕ РёРЅРґРµРєСЃСѓ
+	int getRows() const; // РєРѕР»Р»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє
+	int getCols() const;// РєРѕР»Р»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР±С†РѕРІ
+	std::string toString() const; // Р’С‹РІРѕРґ РјР°С‚СЂРёС†С‹ РІ СЃС‚СЂРѕРєСѓ
 };
 

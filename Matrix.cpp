@@ -1,31 +1,32 @@
+п»ї
 #include "Matrix.h"
 #include <iostream>
 #include<string>
 
-// реализация конструктора по умолчанию
+// СЂРµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Matrix::Matrix() {
 	this->rows = 0;
 	this->cols = 0;
 	matrix = nullptr;
 }
-// реализация конструктора с параметрами
+// СЂРµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Matrix::Matrix(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
 
-    // выделяем память
+    // РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ
     matrix = new int* [rows];
     for (int i = 0; i < rows; i++) {
         matrix[i] = new int[cols];
     }
-    // заполняем нулями
+    // Р·Р°РїРѕР»РЅСЏРµРј РЅСѓР»СЏРјРё
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             matrix[i][j] = 0;
         }
     }
 }
-    //реализация деструктора
+    //СЂРµР°Р»РёР·Р°С†РёСЏ РґРµСЃС‚СЂСѓРєС‚РѕСЂР°
     Matrix::~Matrix() {
         if (matrix != nullptr) {
             for (int i = 0; i < rows; i++) {
@@ -37,15 +38,15 @@ Matrix::Matrix(int rows, int cols) {
 
     }
 
-    //реализация конструктора копирования
+    //СЂРµР°Р»РёР·Р°С†РёСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РєРѕРїРёСЂРѕРІР°РЅРёСЏ
     Matrix::Matrix(const Matrix& other) {
-        // Сначала проверяем, что исходный объект валиден
+        // РЎРЅР°С‡Р°Р»Р° РїСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ РёСЃС…РѕРґРЅС‹Р№ РѕР±СЉРµРєС‚ РІР°Р»РёРґРµРЅ
         if (other.matrix == nullptr) {
-            // В этом случае создаем пустую матрицу
+            // Р’ СЌС‚РѕРј СЃР»СѓС‡Р°Рµ СЃРѕР·РґР°РµРј РїСѓСЃС‚СѓСЋ РјР°С‚СЂРёС†Сѓ
             rows = 0;
             cols = 0;
             matrix = nullptr;
-            return; // завершаем выполнение конструктора
+            return; // Р·Р°РІРµСЂС€Р°РµРј РІС‹РїРѕР»РЅРµРЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
         }
 
         rows = other.rows;
@@ -62,7 +63,7 @@ Matrix::Matrix(int rows, int cols) {
             }
         }
     }
-    // реализация оператора присваивания
+    // СЂРµР°Р»РёР·Р°С†РёСЏ РѕРїРµСЂР°С‚РѕСЂР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
     Matrix& Matrix::operator=(const Matrix& other)
     {
         if (this == &other) {
@@ -107,7 +108,7 @@ Matrix::Matrix(int rows, int cols) {
 
     void Matrix::fill(int value) {
         if (matrix == nullptr) {
-            std::cout << "Матрица пуста!" << std::endl;
+            std::cout << "РњР°С‚СЂРёС†Р° РїСѓСЃС‚Р°!" << std::endl;
             return;
         }
         for (int i = 0; i < rows; i++) {
@@ -127,7 +128,7 @@ Matrix::Matrix(int rows, int cols) {
     }
     void Matrix::setElement(int row, int col, int value) {
         if (matrix == nullptr || row < 0 || row >= rows || cols < 0 || col >= cols) {
-            std::cout << "Ошибка: некорректные значения!" << std::endl;
+            std::cout << "РћС€РёР±РєР°: РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ!" << std::endl;
             return;
         }
         matrix[row][col] = value;
@@ -135,11 +136,11 @@ Matrix::Matrix(int rows, int cols) {
 
     int Matrix::getElement(int row, int col) {
         if (matrix == nullptr) {
-            std::cout << "Ошибка: матрица пуста!" << std::endl;
+            std::cout << "РћС€РёР±РєР°: РјР°С‚СЂРёС†Р° РїСѓСЃС‚Р°!" << std::endl;
             return 0;
         }
         if (row < 0 || row >= rows || cols < 0 || col >= cols) {
-            std::cout << "Ошибка: некорректные значения!" << std::endl;
+            std::cout << "РћС€РёР±РєР°: РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ!" << std::endl;
             return 0;
         }
         return matrix[row][col];
@@ -147,7 +148,7 @@ Matrix::Matrix(int rows, int cols) {
 
     int Matrix::getRows() const {
         if (matrix == nullptr) {
-            std::cout << "Ошибка: матрица не инициализирована!" << std::endl;
+            std::cout << "РћС€РёР±РєР°: РјР°С‚СЂРёС†Р° РЅРµ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅР°!" << std::endl;
             return 0;
         }
         return rows;
@@ -155,7 +156,7 @@ Matrix::Matrix(int rows, int cols) {
 
     int Matrix::getCols() const {
         if (matrix == nullptr) {
-            std::cout << "Ошибка: матрица не инициализирована!" << std::endl;
+            std::cout << "РћС€РёР±РєР°: РјР°С‚СЂРёС†Р° РЅРµ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅР°!" << std::endl;
             return 0;
         }
         return cols;
@@ -163,7 +164,7 @@ Matrix::Matrix(int rows, int cols) {
 
     std::string Matrix::toString() const {
         if (matrix == nullptr) {
-            return "Матрица не инициализирована";
+            return "РњР°С‚СЂРёС†Р° РЅРµ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅР°";
         }
 
         std::string st = "";
