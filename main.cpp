@@ -42,6 +42,16 @@ int main()
     std::cout << "вывод в строку" << std::endl;
     std::cout << m1.toString() << std::endl; // вывод в строку
 
+    Matrix a(2, 2);
+    Matrix b(2, 2);
+
+    a.setElement(0, 0, 1);
+    b.setElement(0, 0, 1);
+
+    if (a == b) {
+        std::cout << "Матрицы равны" << std::endl;
+    }
+
     return 0;
 	
 }
