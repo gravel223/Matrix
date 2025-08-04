@@ -1,10 +1,14 @@
 ﻿#include <iostream>
 #include"Matrix.h"
 #include <string.h>
+#include <windows.h>
 
 int main()
 {
-    setlocale(LC_ALL, "rus");
+    // Устанавливаем кодировку консоли
+    SetConsoleCP(65001);     // для ввода
+    SetConsoleOutputCP(65001); // для вывода
+   // setlocale(LC_ALL, "rus");
 	std::cout << "Тест 1 создание" << std::endl;
 	Matrix m1(2, 3);
 	m1.fill(5);
@@ -19,12 +23,6 @@ int main()
     Matrix empty;
     std::cout << "\nПроверка пустой матрицы:\n";
     empty.print();
-
-    std::cout << "Тест 4: создание маленькой матрицы" << std::endl;
-    Matrix small(1, 1);
-    small.fill(10);
-    std::cout << "\nМатрица 1x1:\n";
-    small.print();
 
     Matrix m(2, 2);
     m.fill(4);
