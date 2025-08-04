@@ -106,6 +106,20 @@ Matrix::Matrix(int rows, int cols) {
         return true;
     }
 
+    bool Matrix::operator!=(const Matrix& other) const {
+        if (this->cols != other.cols || this->rows != other.rows) {
+            return true;
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (matrix[i][j] != other.matrix[i][j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     void Matrix::fill(int value) {
         if (matrix == nullptr) {
             std::cout << "Матрица пуста!" << std::endl;
