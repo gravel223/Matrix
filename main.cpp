@@ -8,7 +8,6 @@ int main()
     // Устанавливаем кодировку консоли
     SetConsoleCP(65001);     // для ввода
     SetConsoleOutputCP(65001); // для вывода
-   // setlocale(LC_ALL, "rus");
 	std::cout << "Тест 1 создание" << std::endl;
 	Matrix m1(2, 3);
 	m1.fill(5);

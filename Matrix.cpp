@@ -191,8 +191,20 @@ Matrix::Matrix(int rows, int cols) {
         return st;
     }
 
-    
-    
+    Matrix Matrix::operator+(const Matrix& other) const {
+        if (rows != other.rows || cols != other.cols) {
+            std::cout << "поля матрицы должны быть равны!" << std::endl;
+            return Matrix(0, 0);
+        }
+        Matrix result(rows, cols);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result.matrix[i][j] = matrix[i][j] + other.matrix[i][j];
+            }
+        }
+        return result;
+    }
+
 
 
     
