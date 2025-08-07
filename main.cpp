@@ -48,8 +48,7 @@ int main()
     if (a == b) {
         std::cout << "Матрицы равны" << std::endl;
     }
-
-    return 0;
+   
 	
 }
 
