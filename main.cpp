@@ -8,11 +8,11 @@ int main()
     // Устанавливаем кодировку консоли
     SetConsoleCP(65001);     // для ввода
     SetConsoleOutputCP(65001); // для вывода
-	std::cout << "Тест 1 создание" << std::endl;
-	Matrix m1(2, 3);
-	m1.fill(5);
-	std::cout << "Тестовая матрица 2x3 с заполнением 5:\n";
-	m1.print();
+    std::cout << "Тест 1 создание" << std::endl;
+    Matrix m1(2, 3);
+    m1.fill(5);
+    std::cout << "Тестовая матрица 2x3 с заполнением 5:\n";
+    m1.print();
     std::cout << "Тест 2: копирование" << std::endl;
     Matrix m2 = m1;
     std::cout << "\nКопия матрицы:\n";
@@ -47,8 +47,28 @@ int main()
 
     if (a == b) {
         std::cout << "Матрицы равны" << std::endl;
-    }
-   
-	
-}
 
+    }
+
+    std::cout << "умножение матриц" << std::endl;
+   Matrix m3(2, 2);
+   Matrix m4(2, 2);
+   Matrix m5(2, 2);
+   m3.fill(2);
+   m4.fill(3);
+   m5 = m3 * m4;
+   m5.print();
+   std::cout << "умножение матриц ошибка" << std::endl;
+   Matrix m6(3, 3);
+   m6 = m3 * m4;
+   m6.print();
+
+    std::cout << "префиксный инкремент" << std::endl;
+    Matrix m7(3, 4);
+    m7.fill(2);
+    m7.print();
+    ++m7;
+    std::cout << std::endl;
+    m7.print();
+    return 0;
+}

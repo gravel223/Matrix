@@ -137,8 +137,9 @@ Matrix::Matrix(int rows, int cols) {
             for (int j = 0; j < cols; j++) {
                 std::cout << matrix[i][j] << " ";
             }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
+       
     }
     void Matrix::setElement(int row, int col, int value) {
         if (matrix == nullptr || row < 0 || row >= rows || cols < 0 || col >= cols) {
@@ -217,6 +218,14 @@ Matrix::Matrix(int rows, int cols) {
             }
         }
         return result;
+    }
+    Matrix& Matrix::operator++() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                this->matrix[i][j] = matrix[i][j]++;
+            }
+        }
+        return *this;
     }
 
 
