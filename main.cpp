@@ -59,16 +59,18 @@ int main()
    m5 = m3 * m4;
    m5.print();
    std::cout << "умножение матриц ошибка" << std::endl;
-   Matrix m6(3, 3);
-   m6 = m3 * m4;
+   Matrix m7(3, 3);
+   Matrix m6 = m3 * m7;
    m6.print();
 
     std::cout << "префиксный инкремент" << std::endl;
-    Matrix m7(3, 4);
-    m7.fill(2);
-    m7.print();
-    ++m7;
+    Matrix m8(3, 4);
+    m8.fill(2);
+    m8.print();
+    ++m8;
     std::cout << std::endl;
-    m7.print();
+    m8.print();
+
+    std::cout << "сложение матриц: " << std::endl;
     return 0;
 }
