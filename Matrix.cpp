@@ -237,6 +237,22 @@ Matrix::Matrix(int rows, int cols) {
         return *this;
     }
 
+    Matrix Matrix::operator++(int) {
+        Matrix temp(*this); // сохраняем текущее состояние
+
+        // Увеличиваем каждый элемент на 1
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j]++;
+            }
+        }
+
+        return temp; // возвращаем копию исходного состояния
+
+   }
+
+
+
 
 
     
