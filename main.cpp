@@ -71,6 +71,9 @@ int main()
     std::cout << std::endl;
     m8.print();
 
-    std::cout << "сложение матриц: " << std::endl;
+    std::cout << "префиксный декремент" << std::endl;
+    --m8;
+    std::cout << std::endl;
+    m8.print();
     return 0;
 }

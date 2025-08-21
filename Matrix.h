@@ -20,6 +20,7 @@ public:
 	Matrix operator+(const Matrix& other) const;
 	Matrix operator*(const Matrix& other) const;
 	Matrix& operator++(); //  префиксный инкремент
+	Matrix& operator--(); // префексный дикремент
 	void fill(int value); // заполнение
 	void print(); // вывод
 	void setElement(int row, int col, int value); // получение элемента

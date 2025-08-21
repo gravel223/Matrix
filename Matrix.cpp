@@ -227,6 +227,15 @@ Matrix::Matrix(int rows, int cols) {
         }
         return *this;
     }
+    
+    Matrix& Matrix::operator--() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                this->matrix[i][j] = matrix[i][j]--;
+            }
+        }
+        return *this;
+    }
 
 
 
