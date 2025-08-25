@@ -22,6 +22,7 @@ public:
 	Matrix& operator++(); //  префиксный инкремент
 	Matrix& operator--(); // префиксный декремент
 	Matrix operator++(int); //  постфиксный инкремент
+	Matrix operator--(int); //постфиксный декремент
 	void fill(int value); // заполнение
 	void print(); // вывод
 	void setElement(int row, int col, int value); // получение элемента

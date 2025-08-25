@@ -251,6 +251,17 @@ Matrix::Matrix(int rows, int cols) {
 
    }
 
+    Matrix Matrix::operator--(int) {
+        Matrix temp(*this);
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j]--;
+            }
+        }
+        return temp;
+    }
+
 
 
 
