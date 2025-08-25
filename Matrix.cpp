@@ -222,7 +222,7 @@ Matrix::Matrix(int rows, int cols) {
     Matrix& Matrix::operator++() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                this->matrix[i][j] = matrix[i][j]++;
+               matrix[i][j]++;
             }
         }
         return *this;
@@ -231,7 +231,7 @@ Matrix::Matrix(int rows, int cols) {
     Matrix& Matrix::operator--() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                this->matrix[i][j] = matrix[i][j]--;
+                matrix[i][j]--;
             }
         }
         return *this;
@@ -239,26 +239,14 @@ Matrix::Matrix(int rows, int cols) {
 
     Matrix Matrix::operator++(int) {
         Matrix temp(*this); // сохраняем текущее состояние
-
-        // Увеличиваем каждый элемент на 1
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                matrix[i][j]++;
-            }
-        }
-
+        ++(*this);
         return temp; // возвращаем копию исходного состояния
 
    }
 
     Matrix Matrix::operator--(int) {
-        Matrix temp(*this);
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                matrix[i][j]--;
-            }
-        }
+        Matrix temp(*this); // сохранили старое
+        --(*this); // вызвали исправленный префиксный
         return temp;
     }
 
