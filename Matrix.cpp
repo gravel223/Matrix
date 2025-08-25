@@ -1,7 +1,8 @@
-﻿
-#include "Matrix.h"
+﻿#include "Matrix.h"
 #include <iostream>
 #include<string>
+#include <cstdlib> 
+#include <ctime>    
 
 // реализация конструктора по умолчанию
 Matrix::Matrix() {
@@ -128,6 +129,15 @@ Matrix::Matrix(int rows, int cols) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 matrix[i][j] = value;
+            }
+        }
+    }
+
+    void Matrix::fillRand()
+    {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = rand() % 100;
             }
         }
     }

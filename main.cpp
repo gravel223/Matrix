@@ -2,6 +2,8 @@
 #include"Matrix.h"
 #include <string.h>
 #include <windows.h>
+#include <cstdlib> 
+#include <ctime>   
 
 int main()
 {
@@ -104,7 +106,10 @@ int main()
     m9_copy.print();
     std::cout << "\nТекущая матрица m (после декремента):\n";
     m9.print();
-
+    std::cout << "матрица случайных чисел" << std::endl;
+    Matrix m10(3, 3);
+    m10.fillRand();
+    m10.print();
 
 
     

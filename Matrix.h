@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Matrix.h"
 #include <string.h>
+#include <cstdlib> 
+#include <ctime>    
 class Matrix
 {
 private:
@@ -24,6 +26,7 @@ public:
 	Matrix operator++(int); //  постфиксный инкремент
 	Matrix operator--(int); //постфиксный декремент
 	void fill(int value); // заполнение
+	void fillRand(); // заполнеие псевдослучайнаыми числами
 	void print(); // вывод
 	void setElement(int row, int col, int value); // получение элемента
 	int getElement(int row, int col); // Получение элемента по индексу
