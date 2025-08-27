@@ -110,7 +110,11 @@ int main()
     Matrix m10(3, 3);
     m10.fillRand();
     m10.print();
-
+    std::cout << "перезагрузка оператора индексирования" << std::endl;
+    std::cout << "m10[1][1] = 69" << std::endl;
+    std::cout << m10[1][1] << std::endl; 
+    std::cout << "m10[0][2] = 34" << std::endl;
+    std::cout << m10[0][2] << std::endl; 
 
     
     return 0;

@@ -10,6 +10,21 @@ private:
 	int rows;
 	int cols;
 	int** matrix;
+
+	class Row { // прокси для столбцов
+	private:
+		int* data;
+		int size;
+	public:
+		Row(int* data, int size) {
+			this->data = data;
+			this->size = size;
+		}
+		int& operator[](int j) {
+			return data[j];
+		}
+	};
+
 public:
 	// конструкторы
 	Matrix();                // конструктор по умолчанию
@@ -25,6 +40,7 @@ public:
 	Matrix& operator--(); // префиксный декремент
 	Matrix operator++(int); //  постфиксный инкремент
 	Matrix operator--(int); //постфиксный декремент
+	Row operator[](int col);
 	void fill(int value); // заполнение
 	void fillRand(); // заполнеие псевдослучайнаыми числами
 	void print(); // вывод

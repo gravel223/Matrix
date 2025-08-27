@@ -260,6 +260,10 @@ Matrix::Matrix(int rows, int cols) {
         return temp;
     }
 
+    Matrix::Row Matrix::operator[](int i) {
+        return Row(matrix[i], cols);
+    }
+
 
 
 
