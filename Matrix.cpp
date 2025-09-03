@@ -8,12 +8,14 @@
 Matrix::Matrix() {
 	this->rows = 0;
 	this->cols = 0;
+    matrixCount++;
 	matrix = nullptr;
 }
 // реализация конструктора с параметрами
 Matrix::Matrix(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
+    matrixCount++;
 
     // выделяем память
     matrix = new int* [rows];
@@ -36,7 +38,7 @@ Matrix::Matrix(int rows, int cols) {
             delete[] matrix;
             matrix = nullptr;
         }
-
+        matrixCount--;
     }
 
     //реализация конструктора копирования
@@ -64,6 +66,17 @@ Matrix::Matrix(int rows, int cols) {
             }
         }
     }
+
+    int Matrix::getMatrixCount()
+    {
+        return matrixCount;
+    }
+
+    void Matrix::resetMatrixCount()
+    {
+        matrixCount = 0;
+    }
+
     // реализация оператора присваивания
     Matrix& Matrix::operator=(const Matrix& other)
     {
@@ -263,7 +276,8 @@ Matrix::Matrix(int rows, int cols) {
     Matrix::Row Matrix::operator[](int i) {
         return Row(matrix[i], cols);
     }
-
+    // Инициализация статического поля
+    int Matrix::matrixCount = 0;
 
 
 

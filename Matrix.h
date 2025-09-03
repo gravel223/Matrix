@@ -7,6 +7,7 @@
 class Matrix
 {
 private:
+	static int matrixCount;
 	int rows;
 	int cols;
 	int** matrix;
@@ -31,6 +32,8 @@ public:
 	Matrix(int rows, int cols);// конструктор с параметрами
 	~Matrix();              // деструктор
 	Matrix(const Matrix& other); // конструктор копирования
+	static int getMatrixCount();
+	static void resetMatrixCount();
 	Matrix& operator=(const Matrix& other); // оператор присваивания
 	bool operator==(const Matrix& other) const; 
 	bool operator!=(const Matrix& other) const;
