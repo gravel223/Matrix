@@ -124,6 +124,14 @@ int main()
     Matrix::resetMatrixCount();
     std::cout << "Количество матриц в проекте: " << Matrix::getMatrixCount() << std::endl;
 
+    std::cout << "id матрицы: " << std::endl;
+    std::cout << m9.getId() << " id матрицы m9 " << std::endl;
+    std::cout << m8.getId() << " id матрицы m8 " << std::endl;
+    std::cout << m7.getId() << " id матрицы m7 " << std::endl;
+    std::cout << m6.getId() << " id матрицы m6 " << std::endl;
+    std::cout << m11.getId() << " id матрицы m11 " << std::endl;
+    std::cout << m1.getId() << " id матрицы m1 " << std::endl;
+
 
     
     return 0;

@@ -10,12 +10,14 @@ Matrix::Matrix() {
 	this->cols = 0;
     matrixCount++;
 	matrix = nullptr;
+    id = matrixCount;
 }
 // реализация конструктора с параметрами
 Matrix::Matrix(int rows, int cols) {
     this->rows = rows;
     this->cols = cols;
     matrixCount++;
+    id = matrixCount;
 
     // выделяем память
     matrix = new int* [rows];
@@ -198,6 +200,11 @@ Matrix::Matrix(int rows, int cols) {
             return 0;
         }
         return cols;
+    }
+
+    int Matrix::getId() const
+    {
+        return id;
     }
 
     std::string Matrix::toString() const {

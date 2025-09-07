@@ -10,6 +10,7 @@ private:
 	static int matrixCount;
 	int rows;
 	int cols;
+	int id;
 	int** matrix;
 
 	class Row { // прокси для столбцов
@@ -51,6 +52,7 @@ public:
 	int getElement(int row, int col); // Получение элемента по индексу
 	int getRows() const; // колличество строк
 	int getCols() const;// колличество стобцов
+	int getId() const;
 	std::string toString() const; // Вывод матрицы в строку
 };
 
