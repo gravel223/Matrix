@@ -118,11 +118,11 @@ int main()
 
     std::cout << "проверка счетчика матриц" << std::endl;
 
-    std::cout << "Количество матриц в проекте: "<< m10.getMatrixCount() << std::endl;
+    std::cout << "Количество матриц в проекте: "<< Matrix::getMatrixCount() << std::endl;
     Matrix m11(2, 2);
-    std::cout << "Количество матриц в проекте: " << m10.getMatrixCount() << std::endl;
-    m11.resetMatrixCount();
-    std::cout << "Количество матриц в проекте: " << m10.getMatrixCount() << std::endl;
+    std::cout << "Количество матриц в проекте: " << Matrix::getMatrixCount() << std::endl;
+    Matrix::resetMatrixCount();
+    std::cout << "Количество матриц в проекте: " << Matrix::getMatrixCount() << std::endl;
 
 
     
